@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonder World - Premium Kindergarten & Day Care Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --purple: #A8E6CF;
+            --blue: #4A90E2;
+            --orange: #FF8C42;
+            --dark: #2C3E50;
+            --light: #FFF9F0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFE5E5, #E5F9F7);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🎨';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .visual-item {
+            background: linear-gradient(135deg, var(--purple), var(--secondary));
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .visual-item .icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Amenities Section */
+        .amenities-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, white, var(--light));
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .amenity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(255,107,107,0.3);
+        }
+
+        .amenity-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .amenity-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .amenity-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .amenity-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+            background: linear-gradient(135deg, var(--purple), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--light), white);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            padding: 3rem;
+            color: white;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 15px;
+        }
+
+        .info-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            padding: 3rem;
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--orange));
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,107,107,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE66D;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="schoolGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C42;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGradient)" opacity="0.1"/>
+  
+  <!-- Main Circle Background -->
+  <circle cx="200" cy="200" r="170" fill="white" filter="url(#shadow)"/>
+  
+  <!-- Sun -->
+  <circle cx="200" cy="140" r="35" fill="url(#sunGradient)"/>
+  <!-- Sun Rays -->
+  <g stroke="url(#sunGradient)" stroke-width="4" stroke-linecap="round">
+    <line x1="200" y1="95" x2="200" y2="80"/>
+    <line x1="235" y1="105" x2="245" y2="95"/>
+    <line x1="245" y1="140" x2="260" y2="140"/>
+    <line x1="235" y1="175" x2="245" y2="185"/>
+    <line x1="165" y1="105" x2="155" y2="95"/>
+    <line x1="155" y1="140" x2="140" y2="140"/>
+    <line x1="165" y1="175" x2="155" y2="185"/>
+  </g>
+  
+  <!-- School Building -->
+  <g filter="url(#shadow)">
+    <!-- Main Building -->
+    <rect x="130" y="190" width="140" height="100" fill="url(#schoolGradient)" rx="5"/>
+    
+    <!-- Roof -->
+    <path d="M 120 190 L 200 150 L 280 190 Z" fill="#FF6B6B"/>
+    
+    <!-- Flag Pole -->
+    <line x1="200" y1="150" x2="200" y2="130" stroke="#A8E6CF" stroke-width="3"/>
+    <!-- Flag -->
+    <path d="M 200 130 L 220 135 L 200 140 Z" fill="#4ECDC4"/>
+    
+    <!-- Door -->
+    <rect x="180" y="230" width="40" height="60" fill="#4ECDC4" rx="3"/>
+    <circle cx="210" cy="260" r="3" fill="white"/>
+    
+    <!-- Windows -->
+    <g fill="#FFE66D">
+      <rect x="145" y="210" width="20" height="20" rx="2"/>
+      <rect x="145" y="245" width="20" height="20" rx="2"/>
+      <rect x="235" y="210" width="20" height="20" rx="2"/>
+      <rect x="235" y="245" width="20" height="20" rx="2"/>
+    </g>
+    
+    <!-- Window Panes -->
+    <g stroke="white" stroke-width="2">
+      <line x1="155" y1="210" x2="155" y2="230"/>
+      <line x1="145" y1="220" x2="165" y2="220"/>
+      <line x1="155" y1="245" x2="155" y2="265"/>
+      <line x1="145" y1="255" x2="165" y2="255"/>
+      <line x1="245" y1="210" x2="245" y2="230"/>
+      <line x1="235" y1="220" x2="255" y2="220"/>
+      <line x1="245" y1="245" x2="245" y2="265"/>
+      <line x1="235" y1="255" x2="255" y2="255"/>
+    </g>
+  </g>
+  
+  <!-- Grass -->
+  <ellipse cx="200" cy="290" rx="150" ry="15" fill="#A8E6CF" opacity="0.6"/>
+  
+  <!-- Decorative Elements -->
+  <!-- Trees -->
+  <g>
+    <!-- Left Tree -->
+    <rect x="85" y="240" width="10" height="30" fill="#8B4513"/>
+    <circle cx="90" cy="235" r="20" fill="#4ECDC4" opacity="0.8"/>
+    
+    <!-- Right Tree -->
+    <rect x="305" y="240" width="10" height="30" fill="#8B4513"/>
+    <circle cx="310" cy="235" r="20" fill="#4ECDC4" opacity="0.8"/>
+  </g>
+  
+  <!-- Stars -->
+  <g fill="#FFE66D" opacity="0.7">
+    <path d="M 80 120 L 85 130 L 75 130 Z"/>
+    <path d="M 320 120 L 325 130 L 315 130 Z"/>
+    <path d="M 100 180 L 105 190 L 95 190 Z"/>
+    <path d="M 300 180 L 305 190 L 295 190 Z"/>
+  </g>
+  
+  <!-- Text Container -->
+  <g>
+    <!-- Top Arc Text -->
+    <path id="topArc" d="M 80,200 A 120,120 0 0,1 320,200" fill="none"/>
+    <text font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FF6B6B">
+      <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+        WONDER WORLD
+      </textPath>
+    </text>
+    
+    <!-- Bottom Text -->
+    <text x="200" y="330" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#4ECDC4" text-anchor="middle">
+      KINDERGARTEN
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="200" y="350" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+      Hide N Seek • Play School &amp; Day Care
+    </text>
+  </g>
+  
+  <!-- Decorative Stars Around -->
+  <g fill="#FFE66D">
+    <circle cx="50" cy="200" r="3"/>
+    <circle cx="350" cy="200" r="3"/>
+    <circle cx="120" cy="100" r="2"/>
+    <circle cx="280" cy="100" r="2"/>
+  </g>
+</svg>
+                Daycare Amenities
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="cta-btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to <span>Wonder World</span> Kindergarten</h1>
+                <p>Where Little Minds Grow Big! Premium play-based learning with world-class amenities for your child's holistic development.</p>
+                
+                <div class="hero-badges">
+                    <div class="badge">
+                        <span>🏆</span>
+                        <span>Certified Staff</span>
+                    </div>
+                    <div class="badge">
+                        <span>📹</span>
+                        <span>Live CCTV</span>
+                    </div>
+                    <div class="badge">
+                        <span>🍎</span>
+                        <span>Nutritious Meals</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Schedule a Visit</a>
+                    <a href="#amenities" class="btn-secondary">Our Amenities</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-visual">
+                    <div class="visual-grid">
+                        <div class="visual-item">
+                            <div class="icon">🎨</div>
+                            <div>Art & Craft</div>
+                        </div>
+                        <div class="visual-item">
+                            <div class="icon">🏃</div>
+                            <div>Play Areas</div>
+                        </div>
+                        <div class="visual-item">
+                            <div class="icon">📚</div>
+                            <div>Library</div>
+                        </div>
+                        <div class="visual-item">
+                            <div class="icon">🎵</div>
+                            <div>Music Room</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Children</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Certified Staff</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1:8</div>
+                    <div class="stat-label">Teacher Ratio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section" id="amenities">
+        <div class="container">
+            <div class="section-header">
+                <h2>World-Class Amenities</h2>
+                <p>Everything your child needs for safe, joyful learning and growth</p>
+            </div>
+
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">🔒</div>
+                    <h3>Safety & Security</h3>
+                    <p>Your child's safety is our top priority with comprehensive security measures.</p>
+                    <ul class="amenity-list">
+                        <li>24/7 Live CCTV streaming for parents</li>
+                        <li>Secure entry/exit with swipe cards</li>
+                        <li>Strict pick-up & drop-off policies</li>
+                        <li>Trained security personnel</li>
+                        <li>Fire safety equipment</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎓</div>
+                    <h3>Learning & Development</h3>
+                    <p>Play-based learning environments designed by early childhood education experts.</p>
+                    <ul class="amenity-list">
+                        <li>Age-appropriate educational toys</li>
+                        <li>Interactive learning materials</li>
+                        <li>Art supplies and craft stations</li>
+                        <li>Books and storytelling corners</li>
+                        <li>STEM activity kits</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏗️</div>
+                    <h3>Physical Infrastructure</h3>
+                    <p>Child-friendly facilities designed for comfort and independence.</p>
+                    <ul class="amenity-list">
+                        <li>Child-sized toilets and sinks</li>
+                        <li>Comfortable nap mats and cots</li>
+                        <li>Organized, clean activity areas</li>
+                        <li>Climate-controlled classrooms</li>
+                        <li>Child-safe furniture</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🍎</div>
+                    <h3>Nutritional Support</h3>
+                    <p>Healthy, balanced meals prepared under nutritionist guidance.</p>
+                    <ul class="amenity-list">
+                        <li>Nutritionist-approved menu</li>
+                        <li>Fresh, hygienic food preparation</li>
+                        <li>Allergy-aware meal planning</li>
+                        <li>Balanced breakfast and lunch</li>
+                        <li>Healthy snacks provided</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🌳</div>
+                    <h3>Outdoor & Play Areas</h3>
+                    <p>Safe, stimulating outdoor spaces for physical development and fun.</p>
+                    <ul class="amenity-list">
+                        <li>Age-appropriate playgrounds</li>
+                        <li>Sandpits and water play areas</li>
+                        <li>Indoor gardens and green spaces</li>
+                        <li>Sports and activity zones</li>
+                        <li>Shaded play areas</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">👩‍🏫</div>
+                    <h3>Communication & Staff</h3>
+                    <p>Qualified professionals committed to your child's development.</p>
+                    <ul class="amenity-list">
+                        <li>Early childhood certified teachers</li>
+                        <li>Regular digital progress updates</li>
+                        <li>Parent-teacher meetings</li>
+                        <li>Daily activity reports</li>
+                        <li>Responsive parent communication</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏥</div>
+                    <h3>Additional Conveniences</h3>
+                    <p>Extra facilities to make your experience seamless and worry-free.</p>
+                    <ul class="amenity-list">
+                        <li>On-site medical room</li>
+                        <li>First-aid trained staff</li>
+                        <li>Small library and reading corner</li>
+                        <li>Multimedia learning areas</li>
+                        <li>Transportation services available</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎭</div>
+                    <h3>Enrichment Activities</h3>
+                    <p>Diverse programs to discover and nurture your child's talents.</p>
+                    <ul class="amenity-list">
+                        <li>Music and dance classes</li>
+                        <li>Art and craft workshops</li>
+                        <li>Yoga and physical education</li>
+                        <li>Drama and storytelling</li>
+                        <li>Seasonal events and celebrations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Parents Choose Wonder World</h2>
+                <p>Creating a nurturing environment where every child thrives</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Individual Attention</h3>
+                    <p>Low 1:8 teacher-to-child ratio ensures personalized care and attention for every child's unique needs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Holistic Development</h3>
+                    <p>Balanced curriculum focusing on cognitive, physical, social, and emotional growth of your child.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💝</div>
+                    <h3>Parent Partnership</h3>
+                    <p>Regular updates, open communication, and collaborative approach to your child's development journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Qualified Experts</h3>
+                    <p>All staff hold early childhood education certifications and undergo continuous professional training.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Clean & Hygienic</h3>
+                    <p>Maintained to the highest standards with regular sanitization and cleanliness protocols.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Play-Based Learning</h3>
+                    <p>Age-appropriate activities that make learning fun, engaging, and developmentally appropriate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Learning Environment</h2>
+                <p>A glimpse into our colorful, safe, and stimulating spaces</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">🎨</div>
+                <div class="gallery-item">📚</div>
+                <div class="gallery-item">🏃</div>
+                <div class="gallery-item">🎭</div>
+                <div class="gallery-item">🌳</div>
+                <div class="gallery-item">🎵</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Schedule a visit to see our facilities and meet our team!</p>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h3>Visit Us</h3>
+                            <p>3185, Sector 3,<br>Faridabad, Haryana 121004</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h3>Call Us</h3>
+                            <p>088002 91313</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h3>Timings</h3>
+                            <p>Monday - Saturday<br>7:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h3>Email Us</h3>
+                            <p>info@wonderworldkindergarten.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Schedule a Visit</h2>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Parent's Name *</label>
+                            <input type="text" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="Your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Child's Age *</label>
+                            <input type="text" required placeholder="Age of your child">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Any specific questions or requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Schedule Visit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>🏫 Wonder World Kindergarten</h3>
+                <p>Hide N Seek Play School & Day Care Center</p>
+                <div class="social-links">
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">📸</div>
+                    <div class="social-icon">🐦</div>
+                    <div class="social-icon">▶️</div>
+                </div>
+            </div>
+            <p>&copy; 2025 Wonder World Kindergarten. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! We will contact you shortly to schedule a visit.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
